@@ -74,6 +74,7 @@ if not os.path.isdir(checkpoint_dir): os.mkdir(checkpoint_dir)
 ## not后面的表达式为False时，执行冒号后面的语句
 ## isdir判断是否为一个目录；mkdir为创建目录
 
+# 间隔
 checkpoint_interval = 1
 
 # Input/Output
