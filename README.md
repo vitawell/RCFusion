@@ -1,6 +1,9 @@
 # RCFusion
 Original implementation of the paper "Recurrent Convolutional Fusion for RGB-D Object Recognition": https://arxiv.org/pdf/1806.01673.pdf
 
+主要修改了code/train文件中的checkpoint保存和读取
+
+
 ### Requirements:
 * Tensorflow 1.10.0
 * CUDA 8.0
