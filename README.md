@@ -10,7 +10,7 @@ Original implementation of the paper "Recurrent Convolutional Fusion for RGB-D O
 
 ### Requirements:
 * Tensorflow 1.10.0
-* CUDA 8.0
+* CUDA 8.0 （可以用cpu运行）
 * Python 2.7
 * See python requirements in requirements.txt
 * Docker + nvidia-docker [optional]: https://github.com/NVIDIA/nvidia-docker
