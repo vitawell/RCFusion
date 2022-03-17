@@ -21,8 +21,9 @@ Original implementation of the paper "Recurrent Convolutional Fusion for RGB-D O
 2. To execute the code within a docker container, run ```docker build -t <container_name> .```
 3. Start the container with ```docker run -it --runtime=nvidia -v <dataset_dir>:<dataset_dir> -v <params_dir>:<params_dir> <container_name> bash```
 4. Run ```python code/train_and_eval.py <dataset_dir> <params_dir>```
-（自己电脑上使用cpu：python code/train_and_eval.py /Users/Vita/PycharmProjects/rcfusion-master/ocid_dataset /Users/Vita/PycharmProjects/rcfusion-master/resnet18_ocid_params）```
-5.验证打印预测的类别：python code/eval.py /Users/Vita/PycharmProjects/rcfusion-master/ocid_dataset /Users/Vita/PycharmProjects/rcfusion-master/resnet18_ocid_params
+（自己电脑上使用cpu：```python code/train_and_eval.py /Users/Vita/PycharmProjects/rcfusion-master/ocid_dataset /Users/Vita/PycharmProjects/rcfusion-master/resnet18_ocid_params）```
+
+5.验证打印预测的类别：```python code/eval.py /Users/Vita/PycharmProjects/rcfusion-master/ocid_dataset /Users/Vita/PycharmProjects/rcfusion-master/resnet18_ocid_params```
 
 
 ### Disclaimers:
