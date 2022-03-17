@@ -39,17 +39,24 @@ if len(sys.argv) != 3:
     print("The script requires 2 arguments: (1) the dataset root directory and (2) the parameters root directory.")
 dataset_root_dir = sys.argv[1] #'/mnt/datasets/ocid_dataset'
 params_root_dir = sys.argv[2] #'/mnt/params/models'
+# python code/train_and_eval.py <dataset_dir> <params_dir>
 
-dataset_train_dir_rgb = dataset_root_dir + '/ARID20_crops/squared_rgb/'
-dataset_val_dir_rgb = dataset_root_dir + '/ARID10_crops/squared_rgb/'
+#dataset_train_dir_rgb = dataset_root_dir + '/ARID20_crops/squared_rgb/'
+dataset_train_dir_rgb = dataset_root_dir + '/train_rgb/'
+#dataset_val_dir_rgb = dataset_root_dir + '/ARID10_crops/squared_rgb/'
+dataset_val_dir_rgb = dataset_root_dir + '/val_rgb/'
 params_dir_rgb = params_root_dir + '/resnet18_ocid_rgb++_params.npy'
 
-dataset_train_dir_depth = dataset_root_dir + '/ARID20_crops/surfnorm++/'
-dataset_val_dir_depth = dataset_root_dir + '/ARID10_crops/surfnorm++/'
+#dataset_train_dir_depth = dataset_root_dir + '/ARID20_crops/surfnorm++/'
+dataset_train_dir_depth = dataset_root_dir + '/train_hha/'
+#dataset_val_dir_depth = dataset_root_dir + '/ARID10_crops/surfnorm++/'
+dataset_val_dir_depth = dataset_root_dir + '/val_hha/'
 params_dir_depth = params_root_dir + '/resnet18_ocid_surfnorm++_params.npy'
 
-train_file = dataset_root_dir + '/split_files_and_labels/arid20_clean_sync_instances.txt'
-val_file = dataset_root_dir + '/split_files_and_labels/arid10_clean_sync_instances.txt'
+# train_file = dataset_root_dir + '/split_files_and_labels/arid20_clean_sync_instances.txt'
+# val_file = dataset_root_dir + '/split_files_and_labels/arid10_clean_sync_instances.txt'
+train_file = dataset_root_dir + '/train_labels.txt'
+val_file = dataset_root_dir + '/val_labels.txt'
 
 # Log params
 tensorboard_log = '/tmp/tensorflow/'
@@ -58,7 +65,8 @@ tensorboard_log = '/tmp/tensorflow/'
 learning_rate = [[0.0001]]
 # num_epochs = 50
 num_epochs = 2
-batch_size = [[32]]
+# batch_size = [[32]]
+batch_size = [[2]]
 num_neurons = [[100]]
 l2_factor = [[0.0]]
 maximum_norm = [[4]]
@@ -74,13 +82,21 @@ if not os.path.isdir(checkpoint_dir): os.mkdir(checkpoint_dir)
 ## not后面的表达式为False时，执行冒号后面的语句
 ## isdir判断是否为一个目录；mkdir为创建目录
 
-# 间隔
 checkpoint_interval = 1
+# 保存间隔
 
 # Input/Output
+# num_classes = 49
+# img_size = [224, 224]
+# num_channels = 3
 num_classes = 49
-img_size = [224, 224]
+img_size = [224, 224] #不是原图片大小，修改后运算出错
 num_channels = 3
+
+##
+class_names = ['0', '1/seacu', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19',
+               '20', '21', '22', '23', '24', '25', '26', '27', '28', '29','30', '31', '32', '33', '34', '35', '36', '37', '38', '39',
+               '40', '41', '42', '43', '44', '45', '46', '47', '48', '49']
 
 
 
@@ -422,6 +438,7 @@ for hp in set_params:
         sess.run(training_init_op)
         ### 不能不要上一行的初始化
         saver = tf.train.Saver()
+        # 载入保存的模型
         if os.path.exists('tmp/checkpoint'):
             saver.restore(sess,'tmp/model.ckpt')
         #else:
