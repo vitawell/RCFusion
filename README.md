@@ -5,7 +5,9 @@ Original implementation of the paper "Recurrent Convolutional Fusion for RGB-D O
 （主要修改了code/train文件中的checkpoint保存和读取）
 数据集2400/1400张。Epoch0时loss为4，准确率0.03，1时3，0.54。2时2，0.8。5时1.35，0.84。50时0.39，0.9。（训练一个epoch大概半小时） 
 
-准备添加显示分类结果。
+eval.py显示验证集的分类结果。
+
+txt.py将文件夹中所有图片名和标签1生成一个txt文件。
 
 
 ### Requirements:
