@@ -9,11 +9,13 @@ def generate(dir,label):
     print('start...')
     listText = open(dir+'/'+'list.txt','w')
     for file in files:
-        fileType = os.path.split(file)
-        if fileType[1] == '.txt':
-            continue
-        name = file + ' ' + str(int(label)) +'\n'
-        listText.write(name)
+        (filenum, extension) = os.path.splitext(file)  # 如果文件后缀是png则继续
+        if extension == '.png':
+            fileType = os.path.split(file)
+            if fileType[1] == '.txt':
+                continue
+            name = file + ' ' + str(int(label)) +'\n'
+            listText.write(name)
     listText.close()
     print('down!')
 
