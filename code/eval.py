@@ -42,19 +42,20 @@ params_root_dir = sys.argv[2] #'/mnt/params/models'
 #dataset_train_dir_rgb = dataset_root_dir + '/ARID20_crops/squared_rgb/'
 dataset_train_dir_rgb = dataset_root_dir + '/train_rgb/'
 #dataset_val_dir_rgb = dataset_root_dir + '/ARID10_crops/squared_rgb/'
-dataset_val_dir_rgb = dataset_root_dir + '/val_rgb/'
+dataset_val_dir_rgb = dataset_root_dir + '/test_rgb/'
 params_dir_rgb = params_root_dir + '/resnet18_ocid_rgb++_params.npy'
 
 #dataset_train_dir_depth = dataset_root_dir + '/ARID20_crops/surfnorm++/'
 dataset_train_dir_depth = dataset_root_dir + '/train_hha/'
 #dataset_val_dir_depth = dataset_root_dir + '/ARID10_crops/surfnorm++/'
-dataset_val_dir_depth = dataset_root_dir + '/val_hha/'
+dataset_val_dir_depth = dataset_root_dir + '/test_hha/'
 params_dir_depth = params_root_dir + '/resnet18_ocid_surfnorm++_params.npy'
 
 # train_file = dataset_root_dir + '/split_files_and_labels/arid20_clean_sync_instances.txt'
 # val_file = dataset_root_dir + '/split_files_and_labels/arid10_clean_sync_instances.txt'
 train_file = dataset_root_dir + '/train_labels.txt'
-val_file = dataset_root_dir + '/val_labels.txt'
+val_file = dataset_root_dir + '/test_labels.txt'
+##在test集上做验证！
 
 # Log params
 tensorboard_log = '/tmp/tensorflow/'
