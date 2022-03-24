@@ -33,10 +33,10 @@ for file in img_dir:
         #这里需要均匀裁剪几张，就除以根号下多少，这里我需要裁剪25张，根号25=5（5*5）
         w = int(size_img[0] / 5)
         h = int(size_img[1] / 5)
-        for k in range(5):
-            for v in range(5):
+        for k in range(5): #第k列
+            for v in range(5): #第v行
                 region = img.crop((x + k * w, y + v * h, x + w * (k + 1), y + h * (v + 1)))
 
                 #保存图片的位置以及图片名称
-                region.save('/Users/Vita/PycharmProjects/rcfusion-master/ocid_dataset/newtrainrgb/' + filen + '_crop' + '%d%d' % (k, v) + '.png')
+                region.save('/Users/Vita/PycharmProjects/rcfusion-master/ocid_dataset/newtrainrgb/' + filen + '_crop' + '%d%d' % (v, k) + '.png')
 
