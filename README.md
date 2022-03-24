@@ -9,6 +9,8 @@ eval.py显示验证集的分类结果。
 
 txt.py将文件夹中所有图片名和标签1生成一个txt文件。
 
+crop.py将文件夹中所有图片裁剪。
+
 
 ### Requirements:
 * Tensorflow 1.10.0
