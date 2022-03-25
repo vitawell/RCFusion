@@ -27,10 +27,11 @@ crop.py将文件夹中所有图片裁剪。
 4. Run ```python code/train_and_eval.py <dataset_dir> <params_dir>```
 （自己电脑上使用cpu：```python code/train_and_eval.py /Users/Vita/PycharmProjects/rcfusion-master/ocid_dataset /Users/Vita/PycharmProjects/rcfusion-master/resnet18_ocid_params```
 
-5.验证打印预测的类别：```python code/eval.py /Users/Vita/PycharmProjects/rcfusion-master/ocid_dataset /Users/Vita/PycharmProjects/rcfusion-master/resnet18_ocid_params```
+5.验证准确率：```python code/eval.py /Users/Vita/PycharmProjects/rcfusion-master/ocid_dataset /Users/Vita/PycharmProjects/rcfusion-master/resnet18_ocid_params```
 
 
 6.显示图片和预测类别：```python code/test.py /Users/Vita/PycharmProjects/rcfusion-master/ocid_dataset /Users/Vita/PycharmProjects/rcfusion-master/resnet18_ocid_params```
+（在test_rgb1和test_hha1上做验证！验证不同图片需要替换文件夹中图片！每次需要更改test_labels1.txt中的信息，需要改最后显示的图片路径！）
 
 
 ### Disclaimers:
