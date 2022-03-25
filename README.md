@@ -30,6 +30,9 @@ crop.py将文件夹中所有图片裁剪。
 5.验证打印预测的类别：```python code/eval.py /Users/Vita/PycharmProjects/rcfusion-master/ocid_dataset /Users/Vita/PycharmProjects/rcfusion-master/resnet18_ocid_params```
 
 
+
+
+
 ### Disclaimers:
 * The paper should be cosidered the main reference for this work. All the details of the algorithm and the training are reported there.
 * The data augmentation taken from an external repo. Credits go to: https://github.com/aleju/imgaug
