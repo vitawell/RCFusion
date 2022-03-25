@@ -529,8 +529,8 @@ for hp in set_params:
             #   0.01352696]
 
             ## axis默认0，列最大值索引。axis=1行最大值索引。
-            # print(tf.argmax(batch_preds, axis=1).eval())
-            print(tf.argmax(batch_preds, axis=1).eval()) # 输出[1 1]，两行的预测类别都是1
+            ## print(tf.argmax(batch_preds, axis=1).eval())
+            # print(tf.argmax(batch_preds, axis=1).eval()) # 输出[1 1]，两行的预测类别都是1
 
 
 
