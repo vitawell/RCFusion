@@ -30,7 +30,7 @@ crop.py将文件夹中所有图片裁剪。
 5.验证打印预测的类别：```python code/eval.py /Users/Vita/PycharmProjects/rcfusion-master/ocid_dataset /Users/Vita/PycharmProjects/rcfusion-master/resnet18_ocid_params```
 
 
-
+6.显示图片和预测类别：```python code/test.py /Users/Vita/PycharmProjects/rcfusion-master/ocid_dataset /Users/Vita/PycharmProjects/rcfusion-master/resnet18_ocid_params```
 
 
 ### Disclaimers:
